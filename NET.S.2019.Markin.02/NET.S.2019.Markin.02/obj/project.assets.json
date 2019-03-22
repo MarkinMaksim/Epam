@@ -548,11 +548,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Study\\Epam\\Curses\\NET.S.2019.Markin.02\\NET.S.2019.Markin.02\\NET.S.2019.Markin.02.csproj",
+      "projectUniqueName": "C:\\Study\\Epam\\Curses\\Done\\Epam\\NET.S.2019.Markin.02\\NET.S.2019.Markin.02\\NET.S.2019.Markin.02.csproj",
       "projectName": "NET.S.2019.Markin.02",
-      "projectPath": "C:\\Study\\Epam\\Curses\\NET.S.2019.Markin.02\\NET.S.2019.Markin.02\\NET.S.2019.Markin.02.csproj",
+      "projectPath": "C:\\Study\\Epam\\Curses\\Done\\Epam\\NET.S.2019.Markin.02\\NET.S.2019.Markin.02\\NET.S.2019.Markin.02.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Study\\Epam\\Curses\\NET.S.2019.Markin.02\\NET.S.2019.Markin.02\\obj\\",
+      "outputPath": "C:\\Study\\Epam\\Curses\\Done\\Epam\\NET.S.2019.Markin.02\\NET.S.2019.Markin.02\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [

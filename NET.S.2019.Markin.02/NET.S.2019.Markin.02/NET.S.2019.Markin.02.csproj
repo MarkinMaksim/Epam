@@ -41,12 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FilterDigit.cs" />
+    <Compile Include="FindNthRoot.cs" />
     <Compile Include="InsertBits.cs" />
     <Compile Include="Numbers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\MSTestsInsertBits.cs" />
-    <Compile Include="Tests\NUnitTestsFindBiggerNumber.cs" />
-    <Compile Include="Tests\NUnitTestsInsertBits.cs" />
+    <Compile Include="Tests\MSUnitTest\InsertBits.cs" />
+    <Compile Include="Tests\Nunit\FilterDigits.cs" />
+    <Compile Include="Tests\Nunit\FindBiggerNumber.cs" />
+    <Compile Include="Tests\Nunit\FindBiggerNumberWithTime.cs" />
+    <Compile Include="Tests\Nunit\FindNthRootTest.cs" />
+    <Compile Include="Tests\Nunit\InsertBits.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk">

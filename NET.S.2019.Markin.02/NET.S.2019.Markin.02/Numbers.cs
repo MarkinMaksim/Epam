@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,14 @@ namespace NET.S._2019.Markin._02
 {
     public static class Numbers
     {
-        public static int? FindNextBigger(int number)
+        /// <summary>
+        /// Return's next biger number, which consists digits of the input number
+        /// </summary>
+        /// <param name="number">int</param>
+        /// <returns>next biger number</returns>
+        public static int FindNextBigger(int number)
         {
+            
             if (number < 0)
                 throw new ArgumentException("Number can't be less 0");
             int result = 0;
@@ -46,10 +53,27 @@ namespace NET.S._2019.Markin._02
             }
             catch (OverflowException)
             {
-                return null;
+                return -1;
             }
             if (result == number)
                 return -1;
+            return result;
+        }
+
+        /// <summary>
+        /// Return's next biger number, which consists digits of the input number
+        /// Also you can check time that method take
+        /// </summary>
+        /// <param name="number">int</param>
+        /// <param name="time">TimeSpan</param>
+        /// <returns>int</returns>
+        public static int FindNextBiggerWithTime(int number, out TimeSpan time)
+        {
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+            int result = FindNextBigger(number);
+            timer.Stop();
+            time = timer.Elapsed;
             return result;
         }
     }
