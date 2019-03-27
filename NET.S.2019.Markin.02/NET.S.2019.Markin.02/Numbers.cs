@@ -18,6 +18,8 @@ namespace NET.S._2019.Markin._02
         {
             if (number < 0)
                 throw new ArgumentException("Number can't be less 0");
+            if(number >= int.MaxValue)
+                throw new ArgumentException("Number can't be more than int maxvalue");
 
             int result = 0;
             string str = number.ToString();
