@@ -7,8 +7,6 @@ namespace ArraySort
     /// </summary>
     public class QuickSort
     {
-
-
         /// <summary>
         /// Recursive function of quick sort
         /// </summary>
@@ -67,6 +65,12 @@ namespace ArraySort
             return pi + 1;
         }
 
+        /// <summary>
+        /// Swap elements in array
+        /// </summary>
+        /// <param name="arr">array</param>
+        /// <param name="firstIndex"></param>
+        /// <param name="secondIndex"></param>
         private void Swap(int[] arr, int firstIndex, int secondIndex)
         {
             int temp = arr[firstIndex];
