@@ -38,9 +38,7 @@ namespace NET.S._2019.Markin._02
                         {
                             if (charArray[x] > charArray[y])
                             {
-                                temp = charArray[y];
-                                charArray[y] = charArray[x];
-                                charArray[x] = temp;
+                                Swap(charArray, y, x);
                             }
                         }
                     }
@@ -59,6 +57,19 @@ namespace NET.S._2019.Markin._02
             if (result == number)
                 return -1;
             return result;
+        }
+
+        /// <summary>
+        /// Swap elements in array
+        /// </summary>
+        /// <param name="arr">array</param>
+        /// <param name="firstIndex"></param>
+        /// <param name="secondIndex"></param>
+        private static void Swap(char[] arr, int firstIndex, int secondIndex)
+        {
+            char temp = arr[firstIndex];
+            arr[firstIndex] = arr[secondIndex];
+            arr[secondIndex] = temp;
         }
 
         /// <summary>
