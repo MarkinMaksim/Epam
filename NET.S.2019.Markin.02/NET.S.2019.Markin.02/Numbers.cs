@@ -16,13 +16,14 @@ namespace NET.S._2019.Markin._02
         /// <returns>next biger number</returns>
         public static int FindNextBigger(int number)
         {
-            
             if (number < 0)
                 throw new ArgumentException("Number can't be less 0");
+
             int result = 0;
             string str = number.ToString();
             char[] charArray = str.ToCharArray();
             char temp;
+
             for (int indexSwap = charArray.Length - 1; indexSwap > 0; indexSwap--)
             {
                 if (charArray[indexSwap] > charArray[indexSwap - 1])

@@ -34,9 +34,16 @@ namespace NET.S._2019.Markin._02
             return x1;
         }
 
+        /// <summary>
+        /// Exponentiation
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="power"></param>
+        /// <returns></returns>
         private static double Pow(double number, int power)
         {
             double result = number;
+
             for(int i = 1; i<power; i++)
             {
                 result *= number;

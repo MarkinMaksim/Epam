@@ -25,6 +25,7 @@ namespace NET.S._2019.Markin._02
                 throw new ArgumentOutOfRangeException("Start and end must be more than 0 and less than 31");
 
             int j = 0;
+
             for(int i = start; i <= end; i++)
             {
                 if((numberIn & (1 << j)) != 0)
@@ -33,8 +34,8 @@ namespace NET.S._2019.Markin._02
                 }
                 j++;
             }
-            return numberSource;
 
+            return numberSource;
         }
 
     }
