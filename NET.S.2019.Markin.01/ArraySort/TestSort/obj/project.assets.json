@@ -5798,11 +5798,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Study\\Epam\\Curses\\Done\\NET.S.2019.Markin.01\\ArraySort\\TestSort\\TestSort.csproj",
+      "projectUniqueName": "C:\\Study\\Epam\\Curses\\NET.S.2019.Markin.01\\ArraySort\\TestSort\\TestSort.csproj",
       "projectName": "TestSort",
-      "projectPath": "C:\\Study\\Epam\\Curses\\Done\\NET.S.2019.Markin.01\\ArraySort\\TestSort\\TestSort.csproj",
+      "projectPath": "C:\\Study\\Epam\\Curses\\NET.S.2019.Markin.01\\ArraySort\\TestSort\\TestSort.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Study\\Epam\\Curses\\Done\\NET.S.2019.Markin.01\\ArraySort\\TestSort\\obj\\",
+      "outputPath": "C:\\Study\\Epam\\Curses\\NET.S.2019.Markin.01\\ArraySort\\TestSort\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5821,8 +5821,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Study\\Epam\\Curses\\Done\\NET.S.2019.Markin.01\\ArraySort\\ArraySort\\ArraySort.csproj": {
-              "projectPath": "C:\\Study\\Epam\\Curses\\Done\\NET.S.2019.Markin.01\\ArraySort\\ArraySort\\ArraySort.csproj"
+            "C:\\Study\\Epam\\Curses\\NET.S.2019.Markin.01\\ArraySort\\ArraySort\\ArraySort.csproj": {
+              "projectPath": "C:\\Study\\Epam\\Curses\\NET.S.2019.Markin.01\\ArraySort\\ArraySort\\ArraySort.csproj"
             }
           }
         }

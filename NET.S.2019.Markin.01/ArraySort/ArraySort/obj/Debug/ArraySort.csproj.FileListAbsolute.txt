@@ -4,9 +4,3 @@ C:\Study\Epam\Curses\NET.S.2019.Markin.01\ArraySort\ArraySort\obj\Debug\ArraySor
 C:\Study\Epam\Curses\NET.S.2019.Markin.01\ArraySort\ArraySort\obj\Debug\ArraySort.csproj.CoreCompileInputs.cache
 C:\Study\Epam\Curses\NET.S.2019.Markin.01\ArraySort\ArraySort\obj\Debug\ArraySort.dll
 C:\Study\Epam\Curses\NET.S.2019.Markin.01\ArraySort\ArraySort\obj\Debug\ArraySort.pdb
-C:\Study\Epam\Curses\Done\NET.S.2019.Markin.01\ArraySort\ArraySort\obj\Debug\ArraySort.csprojAssemblyReference.cache
-C:\Study\Epam\Curses\Done\NET.S.2019.Markin.01\ArraySort\ArraySort\obj\Debug\ArraySort.csproj.CoreCompileInputs.cache
-C:\Study\Epam\Curses\Done\NET.S.2019.Markin.01\ArraySort\ArraySort\obj\Debug\ArraySort.dll
-C:\Study\Epam\Curses\Done\NET.S.2019.Markin.01\ArraySort\ArraySort\obj\Debug\ArraySort.pdb
-C:\Study\Epam\Curses\Done\NET.S.2019.Markin.01\ArraySort\ArraySort\bin\Debug\ArraySort.dll
-C:\Study\Epam\Curses\Done\NET.S.2019.Markin.01\ArraySort\ArraySort\bin\Debug\ArraySort.pdb
