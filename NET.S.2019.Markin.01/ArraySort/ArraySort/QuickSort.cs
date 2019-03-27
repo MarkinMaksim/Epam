@@ -7,8 +7,6 @@ namespace ArraySort
     /// </summary>
     public class QuickSort
     {
-
-
         /// <summary>
         /// Recursive function of quick sort
         /// </summary>
