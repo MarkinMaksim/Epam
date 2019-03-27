@@ -78,8 +78,8 @@ namespace NET.S._2019.Markin._02
         /// Return's next biger number, which consists digits of the input number
         /// Also you can check time that method take
         /// </summary>
-        /// <param name="number">int</param>
-        /// <param name="time">TimeSpan</param>
+        /// <param name="number">Input number</param>
+        /// <param name="time">Time that takes method FindNextBiggerNumber</param>
         /// <returns>int</returns>
         public static int FindNextBiggerWithTime(int number, out TimeSpan time)
         {
