@@ -8,6 +8,11 @@ namespace NET.S._2019.Markin._03
 {
     public static class BinaryViewIEEE754
     {
+        /// <summary>
+        /// Converts double number to IEEE75
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
         public static string GetBinaryView(this double number)
         {
             string sign = number < 0 ? "1" : "0";
