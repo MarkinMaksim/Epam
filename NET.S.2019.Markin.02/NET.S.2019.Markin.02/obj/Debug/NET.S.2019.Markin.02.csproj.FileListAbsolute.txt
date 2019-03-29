@@ -35,4 +35,4 @@ C:\Study\Epam\Curses\Done\Epam\NET.S.2019.Markin.02\NET.S.2019.Markin.02\obj\Deb
 C:\Study\Epam\Curses\Done\Epam\NET.S.2019.Markin.02\NET.S.2019.Markin.02\obj\Debug\NET.S.2019.Markin.02.csproj.CopyComplete
 C:\Study\Epam\Curses\Done\Epam\NET.S.2019.Markin.02\NET.S.2019.Markin.02\obj\Debug\NET.S.2019.Markin.02.dll
 C:\Study\Epam\Curses\Done\Epam\NET.S.2019.Markin.02\NET.S.2019.Markin.02\obj\Debug\NET.S.2019.Markin.02.pdb
-C:\Study\Epam\Curses\Done\Epam\NET.S.2019.Markin.02\NET.S.2019.Markin.02\obj\Debug\NET.S.2019.Markin.02.csprojAssemblyReference.cache
+C:\Study\Epam\Curses\Done\Epam\NET.S.2019.Markin.02\NET.S.2019.Markin.02\bin\Debug\StyleCop.dll

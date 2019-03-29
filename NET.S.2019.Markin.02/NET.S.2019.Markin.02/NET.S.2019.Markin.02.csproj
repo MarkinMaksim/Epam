@@ -69,6 +69,12 @@
     <PackageReference Include="NUnit3TestAdapter">
       <Version>3.13.0</Version>
     </PackageReference>
+    <PackageReference Include="StyleCop">
+      <Version>6.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="StyleCop.CSharp">
+      <Version>6.0.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

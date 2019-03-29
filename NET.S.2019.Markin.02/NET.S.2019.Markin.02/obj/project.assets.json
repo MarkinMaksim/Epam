@@ -63,6 +63,27 @@
         "build": {
           "build/net35/NUnit3TestAdapter.props": {}
         }
+      },
+      "StyleCop/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/StyleCop.dll": {}
+        },
+        "runtime": {
+          "lib/net40/StyleCop.dll": {}
+        }
+      },
+      "StyleCop.CSharp/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "StyleCop": "6.0.0"
+        },
+        "compile": {
+          "lib/net40/StyleCop.CSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net40/StyleCop.CSharp.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.6.1/win": {
@@ -126,6 +147,27 @@
         "type": "package",
         "build": {
           "build/net35/NUnit3TestAdapter.props": {}
+        }
+      },
+      "StyleCop/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/StyleCop.dll": {}
+        },
+        "runtime": {
+          "lib/net40/StyleCop.dll": {}
+        }
+      },
+      "StyleCop.CSharp/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "StyleCop": "6.0.0"
+        },
+        "compile": {
+          "lib/net40/StyleCop.CSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net40/StyleCop.CSharp.dll": {}
         }
       }
     },
@@ -191,6 +233,27 @@
         "build": {
           "build/net35/NUnit3TestAdapter.props": {}
         }
+      },
+      "StyleCop/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/StyleCop.dll": {}
+        },
+        "runtime": {
+          "lib/net40/StyleCop.dll": {}
+        }
+      },
+      "StyleCop.CSharp/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "StyleCop": "6.0.0"
+        },
+        "compile": {
+          "lib/net40/StyleCop.CSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net40/StyleCop.CSharp.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.6.1/win-x86": {
@@ -254,6 +317,27 @@
         "type": "package",
         "build": {
           "build/net35/NUnit3TestAdapter.props": {}
+        }
+      },
+      "StyleCop/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/StyleCop.dll": {}
+        },
+        "runtime": {
+          "lib/net40/StyleCop.dll": {}
+        }
+      },
+      "StyleCop.CSharp/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "StyleCop": "6.0.0"
+        },
+        "compile": {
+          "lib/net40/StyleCop.CSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net40/StyleCop.CSharp.dll": {}
         }
       }
     }
@@ -531,6 +615,32 @@
         "nunit3testadapter.3.13.0.nupkg.sha512",
         "nunit3testadapter.nuspec"
       ]
+    },
+    "StyleCop/6.0.0": {
+      "sha512": "bKVg4zvx5oW6NTO1QLYv1T1MZgVLfu78e5ZRCSogdy9d2hyBv8VGY+fndiT4EPjqrjQo55S+9z7jmU66cOGiAw==",
+      "type": "package",
+      "path": "stylecop/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/StyleCop.dll",
+        "lib/net40/StyleCop.xml",
+        "stylecop.6.0.0.nupkg.sha512",
+        "stylecop.nuspec"
+      ]
+    },
+    "StyleCop.CSharp/6.0.0": {
+      "sha512": "nYH1ZkM7RMmuLEkD4svdZvG+gn3n870eKWk+EuqKTwnEqzPdcZ89z84Bbs53QbSrJ4xtmYHM9yEDE43tVM9vLg==",
+      "type": "package",
+      "path": "stylecop.csharp/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/StyleCop.CSharp.dll",
+        "lib/net40/StyleCop.CSharp.xml",
+        "stylecop.csharp.6.0.0.nupkg.sha512",
+        "stylecop.csharp.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -539,7 +649,9 @@
       "MSTest.TestFramework >= 1.4.0",
       "Microsoft.NET.Test.Sdk >= 16.0.1",
       "NUnit >= 3.11.0",
-      "NUnit3TestAdapter >= 3.13.0"
+      "NUnit3TestAdapter >= 3.13.0",
+      "StyleCop >= 6.0.0",
+      "StyleCop.CSharp >= 6.0.0"
     ]
   },
   "packageFolders": {
@@ -594,6 +706,14 @@
           "NUnit3TestAdapter": {
             "target": "Package",
             "version": "[3.13.0, )"
+          },
+          "StyleCop": {
+            "target": "Package",
+            "version": "[6.0.0, )"
+          },
+          "StyleCop.CSharp": {
+            "target": "Package",
+            "version": "[6.0.0, )"
           }
         }
       }

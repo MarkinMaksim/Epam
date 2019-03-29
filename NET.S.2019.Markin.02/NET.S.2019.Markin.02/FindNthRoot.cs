@@ -22,6 +22,7 @@ namespace NET.S._2019.Markin._02
             if (eps <= 0)
                 throw new ArgumentOutOfRangeException(nameof(eps) + "cantn't be less zero");
 
+
             double x0 = number / powerRoot;
             double x1 = (1.0 / powerRoot) * (((powerRoot - 1) * x0) + (number / Pow(x0, powerRoot - 1)));
 
