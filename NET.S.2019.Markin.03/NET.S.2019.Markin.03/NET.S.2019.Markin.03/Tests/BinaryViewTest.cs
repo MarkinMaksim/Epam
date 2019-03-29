@@ -16,6 +16,8 @@ namespace NET.S._2019.Markin._03.Tests
         [TestCase(double.NaN, ExpectedResult ="1111111111111000000000000000000000000000000000000000000000000000")]
         [TestCase(double.NegativeInfinity, ExpectedResult ="1111111111110000000000000000000000000000000000000000000000000000")]
         [TestCase(double.PositiveInfinity, ExpectedResult ="0111111111110000000000000000000000000000000000000000000000000000")]
+        [TestCase(-0.0, ExpectedResult ="1000000000000000000000000000000000000000000000000000000000000000")]
+        [TestCase(0.0, ExpectedResult ="0000000000000000000000000000000000000000000000000000000000000000")]
         public string Test_BinaryView_Number_Is_Correct(double number)
         {
             return number.GetBinaryView();

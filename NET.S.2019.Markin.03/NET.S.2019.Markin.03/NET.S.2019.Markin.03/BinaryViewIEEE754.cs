@@ -11,52 +11,72 @@ namespace NET.S._2019.Markin._03
         public static string GetBinaryView(this double number)
         {
             string sign = number < 0 ? "1" : "0";
-
+            switch (number)
+            {
+                case double.Epsilon:
+                    return "0000000000000000000000000000000000000000000000000000000000000001";
+                case double.NaN:
+                    return "1111111111111000000000000000000000000000000000000000000000000000";
+                case double.PositiveInfinity:
+                    return "0111111111110000000000000000000000000000000000000000000000000000";
+                case double.NegativeInfinity:
+                    return "1111111111110000000000000000000000000000000000000000000000000000";
+                case 0:
+                    return $"{sign}000000000000000000000000000000000000000000000000000000000000000";
+            }
+            double temp = number;
+            int power = 0;
             number = Math.Abs(number);
+            double multipier;
 
-            string intPart = ConvertToBinaryInt((long)number);
+            if (number >= 2)
+                multipier = 0.5;
+            else
+                multipier = 2;
 
-            double real = number - (long)number;
-            string realPart = ConvertToBinaryReal(real, 52 - intPart.Length - 1);
+            for(power = 0; power >= 0; power++)
+            {
+                if (number >= 1 && number < 2)
+                    break;
+                number *= multipier;
+            }
 
-            string exponent = ConvertToBinaryInt(1023 + intPart.Length - 1);
+            if (temp < 1 && temp > -1)
+                power *= -1;
 
-            string mantisa = $"{intPart.Substring(1)}{realPart}".PadRight(52, '0');
+            number--;
+            
+            string exponent = Convert.ToString(power + 1023, 2);
+            while(exponent.Length < 11)
+            {
+                exponent = exponent.Insert(0, "0");
+            }
+            string mantisa = ConvertToBinary(number);
             string result = $"{sign}{exponent}{mantisa}";
             return result;
 
         }
 
-        private static string ConvertToBinaryInt(long number)
+        private static string ConvertToBinary(double number)
         {
-            string result = string.Empty;
-
-            if (number == 0)
-                return "0";
-
-            while(number > 0)
-            {
-                long mod = number % 2;
-                number /= 2;
-                result = $"{mod}{result}";
-            }
-
-            return result;
-        }
-        private static string ConvertToBinaryReal(double number, int exponent)
-        {
-            if(number > 1)
+            if (number > 1)
             {
                 throw new ArgumentOutOfRangeException($"{nameof(number)}");
             }
 
+            string integerPart;
             string result = string.Empty;
 
-            for(int i = 0; i < exponent; i++)
+            for(int i = 0; i < 52; i++)
             {
                 number *= 2;
-                var integerPart = (int)number;
-                number -= integerPart;
+                if (number >= 1)
+                {
+                    integerPart = "1";
+                    number--;
+                }
+                else
+                    integerPart = "0";
                 result = $"{result}{integerPart}";
             }
 
