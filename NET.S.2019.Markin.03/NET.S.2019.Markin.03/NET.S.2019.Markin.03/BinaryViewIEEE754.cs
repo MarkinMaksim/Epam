@@ -62,6 +62,11 @@ namespace NET.S._2019.Markin._03
 
         }
 
+        /// <summary>
+        /// Convert decimal mantisa to binary form
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
         private static string ConvertToBinary(double number)
         {
             if (number > 1)

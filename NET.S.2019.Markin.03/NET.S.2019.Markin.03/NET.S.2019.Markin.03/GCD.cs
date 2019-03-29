@@ -10,9 +10,9 @@ namespace NET.S._2019.Markin._03
     public static class GCD
     {
         /// <summary>
-        /// 
+        /// Validate input parametrs and invokes GCD finding process with Evklid algorithm
         /// </summary>
-        /// <param name="time"></param>
+        /// <param name="time">Time that takes method</param>
         /// <param name="numbers"></param>
         /// <returns></returns>
         public static int GCDEvklid(out TimeSpan time, params int[] numbers)
@@ -20,7 +20,7 @@ namespace NET.S._2019.Markin._03
             if (numbers == null)
                 throw new ArgumentNullException(nameof(numbers) + " can't be null");
 
-            if (numbers.Length == 1)
+            if (numbers.Length <= 1)
                 throw new ArgumentException(nameof(numbers) + " count of numbers must be more than 1");
 
             Stopwatch timer = new Stopwatch();
@@ -42,7 +42,7 @@ namespace NET.S._2019.Markin._03
         }
 
         /// <summary>
-        /// 
+        /// Find GCD by Evklid method
         /// </summary>
         /// <param name="val1"></param>
         /// <param name="val2"></param>
@@ -56,7 +56,7 @@ namespace NET.S._2019.Markin._03
         }
 
         /// <summary>
-        /// 
+        /// Validate input parametrs and invokes GCD finding process with Stein algorithm
         /// </summary>
         /// <param name="time"></param>
         /// <param name="numbers"></param>
@@ -66,7 +66,7 @@ namespace NET.S._2019.Markin._03
             if (numbers == null)
                 throw new ArgumentNullException(nameof(numbers) + " can't be null");
 
-            if (numbers.Length == 1)
+            if (numbers.Length <= 1)
                 throw new ArgumentException(nameof(numbers) + " count of numbers must be more than 1");
 
             Stopwatch timer = new Stopwatch();
@@ -88,7 +88,7 @@ namespace NET.S._2019.Markin._03
         }
 
         /// <summary>
-        /// 
+        /// Find GCD by Stein method
         /// </summary>
         /// <param name="val1"></param>
         /// <param name="val2"></param>
