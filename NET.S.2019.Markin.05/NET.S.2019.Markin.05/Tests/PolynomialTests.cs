@@ -18,6 +18,26 @@ namespace NET.S._2019.Markin._05.Tezts
         }
 
         [TestCase]
+        public void Test_Polynomial_Sum_With_Number()
+        {
+            Polynomial pol1 = new Polynomial(3, 8, 9);
+            Polynomial expected = new Polynomial(4, 9, 10);
+
+            Polynomial actual = pol1 + 1;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase]
+        public void Test_Polynomial_Sum_With_Number_2()
+        {
+            Polynomial pol1 = new Polynomial(3, 8, 9);
+            Polynomial expected = new Polynomial(4, 9, 10);
+
+            Polynomial actual = 1 + pol1;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase]
         public void Test_Polynomial_Sub()
         {
             Polynomial pol1 = new Polynomial(3, 8, 9);
@@ -25,6 +45,26 @@ namespace NET.S._2019.Markin._05.Tezts
             Polynomial expected = new Polynomial(-4, 6, 8);
 
             Polynomial actual = pol1 - pol2;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase]
+        public void Test_Polynomial_Sub_With_Number()
+        {
+            Polynomial pol1 = new Polynomial(3, 8, 9);
+            Polynomial expected = new Polynomial(2, 7, 8);
+
+            Polynomial actual = pol1 - 1;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase]
+        public void Test_Polynomial_Sub_With_Number_2()
+        {
+            Polynomial pol1 = new Polynomial(3, 8, 9);
+            Polynomial expected = new Polynomial(2, 7, 8);
+
+            Polynomial actual = 1 - pol1;
             Assert.AreEqual(expected, actual);
         }
 
