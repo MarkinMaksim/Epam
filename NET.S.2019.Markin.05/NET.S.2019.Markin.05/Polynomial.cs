@@ -173,14 +173,13 @@ namespace NET.S._2019.Markin._05
         /// <returns></returns>
         public static Polynomial operator *(Polynomial pol1, Polynomial pol2)
         {
-            double[] result = new double[pol1.coefficient.Length * pol2.coefficient.Length];
-            int k = 0;
+            double[] result = new double[pol1.coefficient.Length + pol2.coefficient.Length - 1 ];
             for (int i = 0; i < pol1.coefficient.Length; i++)
             {
                 for (int j = 0; j < pol2.coefficient.Length; j++)
                 {
-                    result[k] = pol1.coefficient[i] * pol2.coefficient[j];
-                    k++;
+                    result[i+j] = result[i+j] + pol1.coefficient[i] * pol2.coefficient[j];
+                   
                 }
             }
 

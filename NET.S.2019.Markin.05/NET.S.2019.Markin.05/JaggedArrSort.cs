@@ -10,6 +10,10 @@ namespace NET.S._2019.Markin._05
     {
         private delegate bool SortType(int[] arr1, int[] arr2);
             
+        /// <summary>
+        /// Check input array
+        /// </summary>
+        /// <param name="arr"></param>
         private static void Check(int[][] arr)
         {
             if (arr == null)
@@ -21,6 +25,12 @@ namespace NET.S._2019.Markin._05
                     throw new ArgumentException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="arr1"></param>
+        /// <param name="arr2"></param>
+        /// <returns></returns>
         private static bool SumInc(int[] arr1, int[] arr2)
         {
             if (arr1.Sum() > arr2.Sum())

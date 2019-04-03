@@ -31,9 +31,9 @@ namespace NET.S._2019.Markin._05.Tezts
         [TestCase]
         public void Test_Polynomial_Multiply()
         {
-            Polynomial pol1 = new Polynomial(3, 8, 9);
-            Polynomial pol2 = new Polynomial(7, 2, 1);
-            Polynomial expected = new Polynomial(21, 6, 3, 56, 16, 8, 63, 18, 9);
+            Polynomial pol1 = new Polynomial(3, 8);
+            Polynomial pol2 = new Polynomial(7, 2);
+            Polynomial expected = new Polynomial(21,62,16);
 
             Polynomial actual = pol1 * pol2;
             Assert.AreEqual(expected, actual);
