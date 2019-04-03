@@ -39,6 +39,12 @@ namespace NET.S._2019.Markin._05
                 return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="arr1"></param>
+        /// <param name="arr2"></param>
+        /// <returns></returns>
         private static bool SumDec(int[] arr1, int[] arr2)
         {
             if (arr1.Sum() < arr2.Sum())
@@ -47,6 +53,12 @@ namespace NET.S._2019.Markin._05
                 return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="arr1"></param>
+        /// <param name="arr2"></param>
+        /// <returns></returns>
         private static bool MaxInc(int[] arr1, int[] arr2)
         {
             if (arr1.Max() > arr2.Max())
@@ -55,6 +67,12 @@ namespace NET.S._2019.Markin._05
                 return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="arr1"></param>
+        /// <param name="arr2"></param>
+        /// <returns></returns>
         private static bool MaxDec(int[] arr1, int[] arr2)
         {
             if (arr1.Max() < arr2.Max())
@@ -63,6 +81,12 @@ namespace NET.S._2019.Markin._05
                 return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="arr1"></param>
+        /// <param name="arr2"></param>
+        /// <returns></returns>
         private static bool MinInc(int[] arr1, int[] arr2)
         {
             if (arr1.Min() > arr2.Min())
@@ -71,6 +95,12 @@ namespace NET.S._2019.Markin._05
                 return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="arr1"></param>
+        /// <param name="arr2"></param>
+        /// <returns></returns>
         private static bool MinDec(int[] arr1, int[] arr2)
         {
             if (arr1.Min() > arr2.Min())
@@ -79,6 +109,10 @@ namespace NET.S._2019.Markin._05
                 return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="jaggedArr"></param>
         public static void SortByMaxInc(int[][] jaggedArr)
         {
             Check(jaggedArr);
@@ -86,6 +120,10 @@ namespace NET.S._2019.Markin._05
             Sort(jaggedArr, sorttype);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="jaggedArr"></param>
         public static void SortByMaxDec(int[][] jaggedArr)
         {
             Check(jaggedArr);
@@ -93,6 +131,10 @@ namespace NET.S._2019.Markin._05
             Sort(jaggedArr, sorttype);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="jaggedArr"></param>
         public static void SortBySumInc(int[][] jaggedArr)
         {
             Check(jaggedArr);
@@ -100,6 +142,10 @@ namespace NET.S._2019.Markin._05
             Sort(jaggedArr, sorttype);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="jaggedArr"></param>
         public static void SortBySumDec(int[][] jaggedArr)
         {
             Check(jaggedArr);
@@ -107,6 +153,10 @@ namespace NET.S._2019.Markin._05
             Sort(jaggedArr, sorttype);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="jaggedArr"></param>
         public static void SortByMinInc(int[][] jaggedArr)
         {
             Check(jaggedArr);
@@ -114,6 +164,10 @@ namespace NET.S._2019.Markin._05
             Sort(jaggedArr, sorttype);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="jaggedArr"></param>
         public static void SortByMinDec(int[][] jaggedArr)
         {
             Check(jaggedArr);
@@ -121,6 +175,11 @@ namespace NET.S._2019.Markin._05
             Sort(jaggedArr, sorttype);
         }
 
+        /// <summary>
+        /// Sort jagged array
+        /// </summary>
+        /// <param name="jaggedArr"></param>
+        /// <param name="sortType"></param>
         private static void Sort(int[][] jaggedArr, SortType sortType)
         {
             int[] tempArr;
