@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace NET.S._2019.Markin._05
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public sealed class Polynomial
     {
         private double[] coefficient;
 
+        /// <summary>
+        /// Initialization
+        /// </summary>
+        /// <param name="coef"></param>
         public Polynomial(params double[] coef)
         {
             if (coef == null)
@@ -20,6 +27,13 @@ namespace NET.S._2019.Markin._05
             coefficient = coef;
         }
 
+        /// <summary>
+        /// Find polynomial with min length
+        /// </summary>
+        /// <param name="pol1"></param>
+        /// <param name="pol2"></param>
+        /// <param name="min">Min Length</param>
+        /// <returns></returns>
         private static double[] MaxMinLength(Polynomial pol1, Polynomial pol2, out int min)
         {
             double[] result;
@@ -37,6 +51,12 @@ namespace NET.S._2019.Markin._05
             return result;
         }
 
+        /// <summary>
+        /// Override +
+        /// </summary>
+        /// <param name="pol1"></param>
+        /// <param name="pol2"></param>
+        /// <returns></returns>
         public static Polynomial operator +(Polynomial pol1, Polynomial pol2)
         {
             double[] result;
@@ -52,6 +72,12 @@ namespace NET.S._2019.Markin._05
             return new Polynomial(result);
         }
 
+        /// <summary>
+        /// Override + with number when it second parametr
+        /// </summary>
+        /// <param name="pol1"></param>
+        /// <param name="Number"></param>
+        /// <returns></returns>
         public static Polynomial operator +(Polynomial pol1, double Number)
         {
             double[] result = new double[pol1.coefficient.Length];
@@ -64,6 +90,12 @@ namespace NET.S._2019.Markin._05
             return new Polynomial(result);
         }
 
+        /// <summary>
+        /// Override + with number when it first parametr
+        /// </summary>
+        /// <param name="Number"></param>
+        /// <param name="pol1"></param>
+        /// <returns></returns>
         public static Polynomial operator +(double Number, Polynomial pol1)
         {
             double[] result = new double[pol1.coefficient.Length];
@@ -76,7 +108,12 @@ namespace NET.S._2019.Markin._05
             return new Polynomial(result);
         }
 
-
+        /// <summary>
+        ///  Override -
+        /// </summary>
+        /// <param name="pol1"></param>
+        /// <param name="pol2"></param>
+        /// <returns></returns>
         public static Polynomial operator -(Polynomial pol1, Polynomial pol2)
         {
             double[] result;
@@ -92,6 +129,12 @@ namespace NET.S._2019.Markin._05
             return new Polynomial(result);
         }
 
+        /// <summary>
+        ///  Override - with number when it second
+        /// </summary>
+        /// <param name="pol1"></param>
+        /// <param name="Number"></param>
+        /// <returns></returns>
         public static Polynomial operator -(Polynomial pol1, double Number)
         {
             double[] result = new double[pol1.coefficient.Length];
@@ -104,6 +147,12 @@ namespace NET.S._2019.Markin._05
             return new Polynomial(result);
         }
 
+        /// <summary>
+        /// Override - with number when it first
+        /// </summary>
+        /// <param name="Number"></param>
+        /// <param name="pol1"></param>
+        /// <returns></returns>
         public static Polynomial operator -(double Number, Polynomial pol1)
         {
             double[] result = new double[pol1.coefficient.Length];
@@ -116,6 +165,12 @@ namespace NET.S._2019.Markin._05
             return new Polynomial(result);
         }
 
+        /// <summary>
+        /// Override *
+        /// </summary>
+        /// <param name="pol1"></param>
+        /// <param name="pol2"></param>
+        /// <returns></returns>
         public static Polynomial operator *(Polynomial pol1, Polynomial pol2)
         {
             double[] result = new double[pol1.coefficient.Length * pol2.coefficient.Length];
@@ -132,6 +187,12 @@ namespace NET.S._2019.Markin._05
             return new Polynomial(result);
         }
 
+        /// <summary>
+        /// Override * with number when it second
+        /// </summary>
+        /// <param name="pol1"></param>
+        /// <param name="Number"></param>
+        /// <returns></returns>
         public static Polynomial operator *(Polynomial pol1, double Number)
         {
             double[] result = new double[pol1.coefficient.Length];
@@ -144,6 +205,12 @@ namespace NET.S._2019.Markin._05
             return new Polynomial(result);
         }
 
+        /// <summary>
+        /// Override * with number when it first
+        /// </summary>
+        /// <param name="Number"></param>
+        /// <param name="pol1"></param>
+        /// <returns></returns>
         public static Polynomial operator *(double Number, Polynomial pol1)
         {
             double[] result = new double[pol1.coefficient.Length];
