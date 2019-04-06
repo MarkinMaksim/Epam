@@ -76,15 +76,15 @@ namespace NET.S._2019.Markin._05
         /// Override + with number when it second parametr
         /// </summary>
         /// <param name="pol1"></param>
-        /// <param name="Number"></param>
+        /// <param name="number"></param>
         /// <returns></returns>
-        public static Polynomial operator +(Polynomial pol1, double Number)
+        public static Polynomial operator +(Polynomial pol1, double number)
         {
             double[] result = new double[pol1.coefficient.Length];
 
             for (int i = 0; i < pol1.coefficient.Length; i++)
             {
-                result[i] = pol1.coefficient[i] + Number;
+                result[i] = pol1.coefficient[i] + number;
             }
 
             return new Polynomial(result);
@@ -93,16 +93,16 @@ namespace NET.S._2019.Markin._05
         /// <summary>
         /// Override + with number when it first parametr
         /// </summary>
-        /// <param name="Number"></param>
+        /// <param name="number"></param>
         /// <param name="pol1"></param>
         /// <returns></returns>
-        public static Polynomial operator +(double Number, Polynomial pol1)
+        public static Polynomial operator +(double number, Polynomial pol1)
         {
             double[] result = new double[pol1.coefficient.Length];
 
             for (int i = 0; i < pol1.coefficient.Length; i++)
             {
-                result[i] = pol1.coefficient[i] + Number;
+                result[i] = pol1.coefficient[i] + number;
             }
 
             return new Polynomial(result);

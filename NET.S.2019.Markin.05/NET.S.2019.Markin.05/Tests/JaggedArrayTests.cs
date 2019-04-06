@@ -31,12 +31,14 @@ namespace NET.S._2019.Markin._05.Tests
                                            new int[] { 1, 8, 3 },
                                            new int[] { 3, 4, 4 },
                                            new int[] { 4, 0, 6 },
-                                           new int[] { 10, 12, 15 } };
+                                           new int[] { 10, 12, 15 }
+            };
             int[][] expected = new int[5][] { new int[] { 10, 12, 15},
                                            new int[] {  1, 8, 3  },
                                            new int[] { 3, 4, 4 },
                                            new int[] {  4, 0, 6},
-                                           new int[] { 1, 1, 1 } };
+                                           new int[] { 1, 1, 1 }
+            };
             JaggedArrSort.SortBySumDec(actual);
             Assert.AreEqual(expected, actual);
 
