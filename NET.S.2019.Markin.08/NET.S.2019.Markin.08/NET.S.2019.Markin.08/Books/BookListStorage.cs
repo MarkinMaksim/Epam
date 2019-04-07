@@ -9,6 +9,10 @@ namespace NET.S._2019.Markin._08
     {
         private List<Book> listbooks;
 
+        /// <summary>
+        /// Initialize class
+        /// </summary>
+        /// <param name="localbooks"></param>
         public BookListStorage(List<Book> localbooks)
         {
             listbooks = new List<Book>();
@@ -23,11 +27,19 @@ namespace NET.S._2019.Markin._08
             }
         }
 
+        /// <summary>
+        /// Update storage list
+        /// </summary>
+        /// <param name="list"></param>
         public void UpdateListBooks(List<Book> list)
         {
             listbooks = list;
         }
 
+        /// <summary>
+        /// Save all books to binary file
+        /// </summary>
+        /// <param name="filename"></param>
         public void SaveBooks(string filename)
         {
             using (BinaryWriter writer = new BinaryWriter(File.Open(filename, FileMode.Create)))
@@ -45,6 +57,10 @@ namespace NET.S._2019.Markin._08
             }
         }
 
+        /// <summary>
+        /// Load books from binary
+        /// </summary>
+        /// <param name="filename"></param>
         public void LoadBooks(string filename)
         {
             if (File.Exists(filename))

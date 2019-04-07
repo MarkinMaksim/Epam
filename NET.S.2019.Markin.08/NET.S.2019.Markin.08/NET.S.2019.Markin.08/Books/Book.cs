@@ -19,6 +19,16 @@ namespace NET.S._2019.Markin._08
 
         private int price;
 
+        /// <summary>
+        /// Initialize class Book
+        /// </summary>
+        /// <param name="isbn"></param>
+        /// <param name="author"></param>
+        /// <param name="name"></param>
+        /// <param name="publishing"></param>
+        /// <param name="year"></param>
+        /// <param name="pages"></param>
+        /// <param name="price"></param>
         public Book(string isbn, string author, string name, string publishing, int year, int pages, int price)
         {
             if (isbn == null || isbn.Length != 13 || !isbn.All(char.IsDigit) || author == null || publishing == null || year <= 1000 || year >= 2019 
@@ -36,6 +46,9 @@ namespace NET.S._2019.Markin._08
             this.price = price;
         }
 
+        /// <summary>
+        /// Property for isbn
+        /// </summary>
         public string Isbn
         {
             get
@@ -44,6 +57,9 @@ namespace NET.S._2019.Markin._08
             }
         }
 
+        /// <summary>
+        /// Property for Name
+        /// </summary>
         public string Name
         {
             get
@@ -52,6 +68,9 @@ namespace NET.S._2019.Markin._08
             }
         }
 
+        /// <summary>
+        /// Property for author
+        /// </summary>
         public string Author
         {
             get
@@ -60,6 +79,9 @@ namespace NET.S._2019.Markin._08
             }
         }
 
+        /// <summary>
+        /// Property for publisher
+        /// </summary>
         public string Publisher
         {
             get
@@ -68,6 +90,9 @@ namespace NET.S._2019.Markin._08
             }
         }
 
+        /// <summary>
+        /// Property for year
+        /// </summary>
         public int Year
         {
             get
@@ -76,6 +101,9 @@ namespace NET.S._2019.Markin._08
             }
         }
 
+        /// <summary>
+        /// Property for pages
+        /// </summary>
         public int Pages
         {
             get
@@ -84,6 +112,9 @@ namespace NET.S._2019.Markin._08
             }
         }
 
+        /// <summary>
+        /// Property for price
+        /// </summary>
         public int Price
         {
             get
@@ -92,6 +123,11 @@ namespace NET.S._2019.Markin._08
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             if (obj == this)
@@ -117,6 +153,10 @@ namespace NET.S._2019.Markin._08
             }
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{name}, was writen in {year} by {author} and published by {publisher}. Contains {pages} and costs {price} \n ISBN:{isbn} \n ";
@@ -136,6 +176,11 @@ namespace NET.S._2019.Markin._08
             return hashcode;
         }
 
+        /// <summary>
+        /// Implements interface IComparable
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
         public int CompareTo(Book other)
         {
             if (other == null)

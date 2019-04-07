@@ -11,11 +11,19 @@ namespace NET.S._2019.Markin._08.BankSystem
     {
         private static List<Account> listaccs = new List<Account>();
 
+        /// <summary>
+        /// Add accaunt to the list
+        /// </summary>
+        /// <param name="acc"></param>
         public static void Add(Account acc)
         {
             listaccs.Add(acc);
         }
 
+        /// <summary>
+        /// Delete account from list by id
+        /// </summary>
+        /// <param name="id"></param>
         public static void Remove(string id)
         {
             Account acc = GetByID(id);
@@ -28,7 +36,11 @@ namespace NET.S._2019.Markin._08.BankSystem
             listaccs.Remove(acc);
         }
 
-        public void SaveAccs(string filename)
+        /// <summary>
+        /// Save list of accounts in file
+        /// </summary>
+        /// <param name="filename"></param>
+        public static void SaveAccs(string filename)
         {
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream fs = new FileStream("acc.dat", FileMode.OpenOrCreate))
@@ -39,7 +51,11 @@ namespace NET.S._2019.Markin._08.BankSystem
             }
         }
 
-        public void LoadAccs(string filename)
+        /// <summary>
+        /// Load list of accounts from file
+        /// </summary>
+        /// <param name="filename"></param>
+        public static void LoadAccs(string filename)
         {
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream fs = new FileStream("people.dat", FileMode.OpenOrCreate))
@@ -50,7 +66,12 @@ namespace NET.S._2019.Markin._08.BankSystem
             }
         }
 
-        private static Account GetByID(string id)
+        /// <summary>
+        /// Found account in list by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static Account GetByID(string id)
         {
             if (id == null)
             {

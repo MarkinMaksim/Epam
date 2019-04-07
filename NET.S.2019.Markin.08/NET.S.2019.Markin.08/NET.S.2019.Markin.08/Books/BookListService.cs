@@ -8,6 +8,9 @@ namespace NET.S._2019.Markin._08
     {
         private List<Book> listbooks = new List<Book>();
 
+        /// <summary>
+        /// enumeration for search
+        /// </summary>
         public enum Crit
         {
             isbn,
@@ -19,6 +22,9 @@ namespace NET.S._2019.Markin._08
             price
         }
 
+        /// <summary>
+        /// Property for list of books
+        /// </summary>
         public List<Book> ListBooks
         {
             get
@@ -39,6 +45,10 @@ namespace NET.S._2019.Markin._08
             }
         }
 
+        /// <summary>
+        /// Add book to list
+        /// </summary>
+        /// <param name="book"></param>
         public void AddBook(Book book)
         {
             bool exists = false;
@@ -66,6 +76,10 @@ namespace NET.S._2019.Markin._08
             }
         }
 
+        /// <summary>
+        /// Remove book from list if it exist
+        /// </summary>
+        /// <param name="book"></param>
         public void RemoveBook(Book book)
         {
             bool exists = false;
@@ -93,6 +107,12 @@ namespace NET.S._2019.Markin._08
             }
         }
 
+        /// <summary>
+        /// Find book by tag from list
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="crit"></param>
+        /// <returns></returns>
         public Book FindBookByTag(string value, Crit crit)
         {
             switch (crit)
@@ -116,11 +136,18 @@ namespace NET.S._2019.Markin._08
             }
         }
 
+        /// <summary>
+        /// Sort list of books
+        /// </summary>
         public void SortBooksByTag()
         {
             listbooks.Sort();
         }
 
+        /// <summary>
+        /// Print all books from list
+        /// </summary>
+        /// <returns></returns>
         public string PrintBooks()
         {
             string result = string.Empty;
