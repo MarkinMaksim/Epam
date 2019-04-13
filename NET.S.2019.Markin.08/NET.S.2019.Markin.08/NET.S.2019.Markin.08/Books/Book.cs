@@ -47,7 +47,7 @@ namespace NET.S._2019.Markin._08
         }
 
         /// <summary>
-        /// Property for isbn
+        /// Property 
         /// </summary>
         public string Isbn
         {

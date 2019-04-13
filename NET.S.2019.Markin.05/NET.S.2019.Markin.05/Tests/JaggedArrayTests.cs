@@ -19,7 +19,9 @@ namespace NET.S._2019.Markin._05.Tests
                                            new int[] { 3, 4, 4 },
                                            new int[] {  1, 8, 3},
                                            new int[] { 10, 12, 15 }};
-            JaggedArrSort.SortBySumInc(actual);
+            Comparers.CompareSumInc compare = new Comparers.CompareSumInc();
+
+            JaggedArrSort.SortInterface(actual, compare);
             Assert.AreEqual(expected, actual);
             
         }
@@ -39,7 +41,7 @@ namespace NET.S._2019.Markin._05.Tests
                                            new int[] {  4, 0, 6},
                                            new int[] { 1, 1, 1 }
             };
-            JaggedArrSort.SortBySumDec(actual);
+            JaggedArrSort.SortInterface(actual, new Comparers.CompareSumDec());
             Assert.AreEqual(expected, actual);
 
         }

@@ -25,154 +25,10 @@ namespace NET.S._2019.Markin._05
                     throw new ArgumentException();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="arr1"></param>
-        /// <param name="arr2"></param>
-        /// <returns></returns>
-        private static bool SumInc(int[] arr1, int[] arr2)
+        
+        public static void SortInterface(int[][] jaggedArr, IComparer<int[]> comparer)
         {
-            if (arr1.Sum() > arr2.Sum())
-                return true;
-            else
-                return false;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="arr1"></param>
-        /// <param name="arr2"></param>
-        /// <returns></returns>
-        private static bool SumDec(int[] arr1, int[] arr2)
-        {
-            if (arr1.Sum() < arr2.Sum())
-                return true;
-            else
-                return false;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="arr1"></param>
-        /// <param name="arr2"></param>
-        /// <returns></returns>
-        private static bool MaxInc(int[] arr1, int[] arr2)
-        {
-            if (arr1.Max() > arr2.Max())
-                return true;
-            else
-                return false;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="arr1"></param>
-        /// <param name="arr2"></param>
-        /// <returns></returns>
-        private static bool MaxDec(int[] arr1, int[] arr2)
-        {
-            if (arr1.Max() < arr2.Max())
-                return true;
-            else
-                return false;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="arr1"></param>
-        /// <param name="arr2"></param>
-        /// <returns></returns>
-        private static bool MinInc(int[] arr1, int[] arr2)
-        {
-            if (arr1.Min() > arr2.Min())
-                return true;
-            else
-                return false;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="arr1"></param>
-        /// <param name="arr2"></param>
-        /// <returns></returns>
-        private static bool MinDec(int[] arr1, int[] arr2)
-        {
-            if (arr1.Min() > arr2.Min())
-                return true;
-            else
-                return false;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="jaggedArr"></param>
-        public static void SortByMaxInc(int[][] jaggedArr)
-        {
-            Check(jaggedArr);
-            SortType sorttype = MaxInc;
-            Sort(jaggedArr, sorttype);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="jaggedArr"></param>
-        public static void SortByMaxDec(int[][] jaggedArr)
-        {
-            Check(jaggedArr);
-            SortType sorttype = MaxDec;
-            Sort(jaggedArr, sorttype);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="jaggedArr"></param>
-        public static void SortBySumInc(int[][] jaggedArr)
-        {
-            Check(jaggedArr);
-            SortType sorttype = SumInc;
-            Sort(jaggedArr, sorttype);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="jaggedArr"></param>
-        public static void SortBySumDec(int[][] jaggedArr)
-        {
-            Check(jaggedArr);
-            SortType sorttype = SumDec;
-            Sort(jaggedArr, sorttype);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="jaggedArr"></param>
-        public static void SortByMinInc(int[][] jaggedArr)
-        {
-            Check(jaggedArr);
-            SortType sorttype = MinInc;
-            Sort(jaggedArr, sorttype);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="jaggedArr"></param>
-        public static void SortByMinDec(int[][] jaggedArr)
-        {
-            Check(jaggedArr);
-            SortType sorttype = MinDec;
-            Sort(jaggedArr, sorttype);
+            SortArray(jaggedArr, comparer.Compare);    
         }
 
         /// <summary>
@@ -180,14 +36,14 @@ namespace NET.S._2019.Markin._05
         /// </summary>
         /// <param name="jaggedArr"></param>
         /// <param name="sortType"></param>
-        private static void Sort(int[][] jaggedArr, SortType sortType)
+        private static void SortArray(int[][] jaggedArr, Comparison<int[]> compare)
         {
             int[] tempArr;
             for (int i = 0; i < jaggedArr.GetLength(0); i++)
             {
                 for (int j = 0; j < jaggedArr.GetLength(0) - 1 - i; j++)
                 {
-                    if (sortType(jaggedArr[j], jaggedArr[j + 1]))
+                    if (compare(jaggedArr[j], jaggedArr[j + 1]) == 1)
                     {
                         tempArr = jaggedArr[j];
                         jaggedArr[j] = jaggedArr[j + 1];

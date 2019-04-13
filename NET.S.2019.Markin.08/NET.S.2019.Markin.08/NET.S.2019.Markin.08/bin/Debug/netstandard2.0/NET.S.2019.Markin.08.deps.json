@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "cfe1dc2a80602aef150a12815387068463a61a0d"
+    "signature": "83b9b4a5c205c500ac09a903e565018a64c5c533"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,7 +9,9 @@
     ".NETStandard,Version=v2.0/": {
       "NET.S.2019.Markin.08/1.0.0": {
         "dependencies": {
-          "NETStandard.Library": "2.0.3"
+          "NETStandard.Library": "2.0.3",
+          "NUnit": "3.11.0",
+          "NUnit3TestAdapter": "3.12.0"
         },
         "runtime": {
           "NET.S.2019.Markin.08.dll": {}
@@ -20,7 +22,19 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
         }
-      }
+      },
+      "NUnit/3.11.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/nunit.framework.dll": {
+            "assemblyVersion": "3.11.0.0",
+            "fileVersion": "3.11.0.0"
+          }
+        }
+      },
+      "NUnit3TestAdapter/3.12.0": {}
     }
   },
   "libraries": {
@@ -42,6 +56,20 @@
       "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "NUnit/3.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BzGk+u02RCrysmLlSzD+okxzMQ8JRF4eFC/qijDJ8Y/FBdTrTkxkQyTFsYkG1o++pr7QpFAE4VDXDqIfZ/gBAg==",
+      "path": "nunit/3.11.0",
+      "hashPath": "nunit.3.11.0.nupkg.sha512"
+    },
+    "NUnit3TestAdapter/3.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uN7IiBCNxLHVXobqyCZvtRwkbnVclA01cNOrHV3noGOhAG5fX8zCjy053U77hILpX/b9eGRgzdZDj4Xm0TnlGw==",
+      "path": "nunit3testadapter/3.12.0",
+      "hashPath": "nunit3testadapter.3.12.0.nupkg.sha512"
     }
   }
 }

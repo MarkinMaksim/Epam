@@ -11,6 +11,7 @@ namespace BookConsoleApp
     {
         static void Main(string[] args)
         {
+
             Book b1 = new Book("1111111111111", "Max", "Dark1","Minsk", 1980, 100, 100);
             Book b2 = new Book("2222222222222", "Max", "Dark1", "Minsk", 1980, 100, 100);
             Book b3 = new Book("3333333333333", "Max", "Dark1", "Minsk", 1980, 100, 100);
@@ -27,7 +28,9 @@ namespace BookConsoleApp
             storage.SaveBooks("Books");
             BookListStorage storage2 = new BookListStorage(new List<Book>());
             storage2.LoadBooks("Books");
-
+            Console.WriteLine(service.FindBookByTag("1111111111111", BookListService.Crit.isbn));
+            Console.ReadLine();
+            
         }
     }
 }

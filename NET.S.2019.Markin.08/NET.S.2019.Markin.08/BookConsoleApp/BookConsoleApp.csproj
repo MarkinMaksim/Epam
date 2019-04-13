@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NET.S.2019.Markin.08\NET.S.2019.Markin.08.csproj">
-      <Project>{ef292fde-f3f1-442c-b4a0-85d0e44e32cd}</Project>
-      <Name>NET.S.2019.Markin.08</Name>
+    <ProjectReference Include="..\NET.S.2019.Markin.9\NET.S.2019.Markin.9.csproj">
+      <Project>{3c6a458d-700c-49f3-902a-b501b3b31069}</Project>
+      <Name>NET.S.2019.Markin.9</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

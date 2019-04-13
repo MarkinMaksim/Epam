@@ -5,4 +5,9 @@
     <RootNamespace>NET.S._2019.Markin._08</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.11.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.12.0" />
+  </ItemGroup>
+
 </Project>

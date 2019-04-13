@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comparers.cs" />
     <Compile Include="JaggedArrSort.cs" />
     <Compile Include="Polynomial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
