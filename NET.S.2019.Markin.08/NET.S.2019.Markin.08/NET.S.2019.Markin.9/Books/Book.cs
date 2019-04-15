@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace NET.S._2019.Markin._08
 {
-    public class Book : IComparable<Book>
+    public class Book : IComparable<Book>, IFormattable
     {
         private string isbn;
 
@@ -43,7 +43,7 @@ namespace NET.S._2019.Markin._08
             this.name = name;
             this.publisher = publishing;
             this.year = year;
-            this.pages = pages;
+            this.pages\ = pages;
             this.price = price;
         }
 
@@ -190,6 +190,24 @@ namespace NET.S._2019.Markin._08
             }
 
             return isbn.CompareTo(other.Isbn);
+        }
+
+        public string ToString(string format, IFormatProvider formatProvider)
+        {
+            if (format == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            switch (format)
+            {
+                case "AN":
+                    return $"{author},{name}";
+                case "ANPY":
+                    return $"{author},{name},{publisher},{year}";
+                default:
+                    throw new FormatException();
+            }
         }
     }
 }
