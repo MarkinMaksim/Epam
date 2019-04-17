@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using NLog;
 
 namespace NET.S._2019.Markin._08
 {
     public class BookListService
     {
         private List<Book> listbooks = new List<Book>();
-
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         /// <summary>
         /// enumeration for search
         /// </summary>
@@ -74,6 +75,7 @@ namespace NET.S._2019.Markin._08
             {
                 throw new Exception("Book already exist");
             }
+            logger.Info("Add book in service list " + book);
         }
 
         /// <summary>
@@ -105,6 +107,8 @@ namespace NET.S._2019.Markin._08
             {
                 throw new Exception("Book not exist");
             }
+
+            logger.Info("Remove book from service list " + book);
         }
 
         /// <summary>
@@ -115,6 +119,7 @@ namespace NET.S._2019.Markin._08
         /// <returns></returns>
         public Book FindBookByTag(string value, Crit crit)
         {
+            logger.Info("Find book with " + crit + " that equals " + value);
             switch (crit)
             {
                 case Crit.isbn:
@@ -134,6 +139,7 @@ namespace NET.S._2019.Markin._08
                 default:
                     return null;
             }
+            
         }
 
         /// <summary>
@@ -142,6 +148,7 @@ namespace NET.S._2019.Markin._08
         public void SortBooksByTag()
         {
             listbooks.Sort();
+            logger.Info("Sort books in service");
         }
 
         /// <summary>
@@ -156,7 +163,7 @@ namespace NET.S._2019.Markin._08
             {
                 result += b.ToString();
             }
-
+            logger.Info("Return all books in service list by using method PrintBooks");
             return result;
         }
     }

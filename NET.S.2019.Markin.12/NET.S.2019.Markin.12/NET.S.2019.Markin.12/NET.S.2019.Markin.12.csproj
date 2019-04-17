@@ -6,11 +6,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3C6A458D-700C-49F3-902A-B501B3B31069}</ProjectGuid>
+    <ProjectGuid>{6571DA9D-AA83-4EEC-A41D-7E8BE71758A9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NET.S._2019.Markin._9</RootNamespace>
-    <AssemblyName>NET.S.2019.Markin.9</AssemblyName>
+    <RootNamespace>NET.S._2019.Markin._12</RootNamespace>
+    <AssemblyName>NET.S.2019.Markin.12</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -35,19 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.6.2\lib\net45\NLog.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,17 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BankSystem\AccountStorage.cs" />
-    <Compile Include="BankSystem\Accounts\Account.cs" />
-    <Compile Include="BankSystem\Accounts\BaseAccount.cs" />
-    <Compile Include="BankSystem\Accounts\GoldAccount.cs" />
-    <Compile Include="BankSystem\Accounts\PlatinumAccount.cs" />
-    <Compile Include="BankSystem\BankService.cs" />
-    <Compile Include="Books\Book.cs" />
-    <Compile Include="Books\BookFormattingExtension.cs" />
-    <Compile Include="Books\BookListService.cs" />
-    <Compile Include="Books\BookListStorage.cs" />
-    <Compile Include="Books\Tests\BookTests.cs" />
+    <Compile Include="BinarySearch\BinarySearch.cs" />
+    <Compile Include="BinarySearch\Tests\BinarySearchTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

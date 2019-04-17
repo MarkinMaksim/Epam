@@ -43,7 +43,7 @@ namespace NET.S._2019.Markin._08
             this.name = name;
             this.publisher = publishing;
             this.year = year;
-            this.pages\ = pages;
+            this.pages = pages;
             this.price = price;
         }
 

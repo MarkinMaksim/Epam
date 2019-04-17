@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using NLog;
 
 namespace NET.S._2019.Markin._08
 {
     public class BookListStorage
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         private List<Book> listbooks;
 
         /// <summary>
@@ -25,6 +27,7 @@ namespace NET.S._2019.Markin._08
             {
                 listbooks.Add(b);
             }
+            logger.Info("Create instance of class BookListStorage");
         }
 
         /// <summary>
@@ -34,6 +37,7 @@ namespace NET.S._2019.Markin._08
         public void UpdateListBooks(List<Book> list)
         {
             listbooks = list;
+            logger.Info("Update list of books in storage");
         }
 
         /// <summary>
@@ -55,6 +59,7 @@ namespace NET.S._2019.Markin._08
                     writer.Write(b.Price);
                 }
             }
+            logger.Info("Save books in file");
         }
 
         /// <summary>
@@ -85,6 +90,7 @@ namespace NET.S._2019.Markin._08
                     listbooks = result;
                 }
             }
+            logger.Info("Load books from file");
         }
     }
 }
