@@ -50,7 +50,11 @@
   <ItemGroup>
     <Compile Include="BinarySearch\BinarySearch.cs" />
     <Compile Include="BinarySearch\Tests\BinarySearchTest.cs" />
+    <Compile Include="Fibonachi\GenerateFibonachi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roullete\Player.cs" />
+    <Compile Include="Roullete\Roullete.cs" />
+    <Compile Include="Roullete\RoulleteEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

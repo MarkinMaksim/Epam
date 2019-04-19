@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET.S.2019.Markin.12", "NET.S.2019.Markin.12\NET.S.2019.Markin.12.csproj", "{6571DA9D-AA83-4EEC-A41D-7E8BE71758A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{174CD386-9DEA-4270-8461-327CD0AD47E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6571DA9D-AA83-4EEC-A41D-7E8BE71758A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6571DA9D-AA83-4EEC-A41D-7E8BE71758A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6571DA9D-AA83-4EEC-A41D-7E8BE71758A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{174CD386-9DEA-4270-8461-327CD0AD47E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{174CD386-9DEA-4270-8461-327CD0AD47E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{174CD386-9DEA-4270-8461-327CD0AD47E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{174CD386-9DEA-4270-8461-327CD0AD47E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
