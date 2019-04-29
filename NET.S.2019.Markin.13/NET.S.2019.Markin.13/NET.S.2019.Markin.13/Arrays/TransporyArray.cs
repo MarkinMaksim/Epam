@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NET.S._2019.Markin._13.Array
+namespace NET.S._2019.Markin._13.Arrays
 {
-    public class DiagonalArray<T> : Arrays<T>
+    public class TransporyArray<T> : Arrays<T>
     {
-        public DiagonalArray(int capasity) : base(capasity) { }
-        
+        public TransporyArray(int capasity) : base(capasity) { }
+
         public override void AddElement(int i, int j, T item)
         {
             if (values.GetLength(0) <= i || values.GetLength(1) <= j)
@@ -17,12 +17,8 @@ namespace NET.S._2019.Markin._13.Array
                 throw new ArgumentException();
             }
 
-            if (i != j)
-            {
-                throw new ArgumentException();
-            }
-
             values[i, j] = item;
+            values[j, i] = item;
         }
     }
 }

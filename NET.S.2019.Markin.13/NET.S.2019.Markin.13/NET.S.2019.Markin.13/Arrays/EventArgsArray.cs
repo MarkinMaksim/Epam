@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NET.S._2019.Markin._13.Array
+namespace NET.S._2019.Markin._13.Arrays
 {
     public class EventArgsArray
     {

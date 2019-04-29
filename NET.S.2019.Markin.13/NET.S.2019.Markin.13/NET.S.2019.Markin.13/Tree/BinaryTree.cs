@@ -1,215 +1,212 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace NET.S._2019.Markin._13.Tree
+namespace BinaryTreeLib
 {
-    using System;
-    using System.Collections.Generic;
-    namespace Trees
+    /// <summary>
+    /// Represents binary tree abstraction and provides it's methods
+    /// </summary>
+    public class BinaryTree<T>
     {
-        public class BinaryTree<T> where T : IComparable<T>
+        private Node<T> _root;
+        private Comparison<T> _comparison;
+
+        /// <summary>
+        /// Initializes a new instance of the Book class taking delegate as a parameter
+        /// </summary>
+        /// <param name="comp"></param>
+        /// <returns>instance</returns>
+        public BinaryTree(Comparison<T> comp)
         {
-            private BinaryTree<T> parent, left, right;
-            private T val;
-            private List<T> listForPrint = new List<T>();
+            _root = null;
+            if (comp != null)
+                _comparison = comp;
+            else
+                _comparison = Comparer<T>.Default.Compare;
+        }
 
-            public BinaryTree(T val, BinaryTree<T> parent)
+        /// <summary>
+        /// Initializes a new instance of the Book class taking interface as a parameter
+        /// </summary>
+        /// <param name="comparer"></param>
+        /// <returns>instance</returns>
+        public BinaryTree(IComparer<T> comparer) : this(comparer.Compare)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the Book class without parameter
+        /// </summary>
+        /// <returns>instance</returns>
+        public BinaryTree() : this((Comparison<T>)null)
+        {
+        }
+
+        /// <summary>
+        /// Invokes algorithm for adding new element to the tree
+        /// </summary>
+        /// <param name="value"></param>
+        public void AddElement(T value)
+        {
+            if (value == null)
+                throw new ArgumentNullException();
+
+            _root = Add(_root, value);
+        }
+
+        /// <summary>
+        /// Invokes algorithm for adding group of new elements to the tree
+        /// </summary>
+        /// <param name="value"></param>
+        public void AddElements(IEnumerable<T> elements)
+        {
+            if (elements == null)
+                throw new ArgumentNullException();
+
+            foreach (T value in elements)
             {
-                this.val = val;
-                this.parent = parent;
+                if (value == null)
+                    throw new ArgumentNullException();
+
+                _root = Add(_root, value);
             }
+        }
 
-            public void add(T val)
-            {
-                if (val.CompareTo(this.val) < 0)
-                {
-                    if (this.left == null)
-                    {
-                        this.left = new BinaryTree<T>(val, this);
-                    }
-                    else if (this.left != null)
-                        this.left.add(val);
-                }
-                else
-                {
-                    if (this.right == null)
-                    {
-                        this.right = new BinaryTree<T>(val, this);
-                    }
-                    else if (this.right != null)
-                        this.right.add(val);
-                }
-            }
+        /// <summary>
+        /// Invokes algorithm that checks if tree contains the element
+        /// </summary>
+        /// <param name="value"></param>
+        public bool Contains(T value)
+        {
+            if (_root == null)
+                throw new NullReferenceException();
 
-            private BinaryTree<T> _search(BinaryTree<T> tree, T val)
-            {
-                if (tree == null) return null;
-                switch (val.CompareTo(tree.val))
-                {
-                    case 1: return _search(tree.right, val);
-                    case -1: return _search(tree.left, val);
-                    case 0: return tree;
-                    default: return null;
-                }
-            }
+            if (value == null)
+                throw new ArgumentNullException();
 
-            public BinaryTree<T> search(T val)
-            {
-                return _search(this, val);
-            }
+            return Contains(_root, value);
+        }
 
-            public bool remove(T val)
-            {
-                //Проверяем, существует ли данный узел
-                BinaryTree<T> tree = search(val);
-                if (tree == null)
-                {
-                    //Если узла не существует, вернем false
-                    return false;
-                }
-                BinaryTree<T> curTree;
+        /// <summary>
+        /// Invokes algorithm that returns enumerable for inorder traversal
+        /// </summary>
+        /// <returns>IEnumerable</returns>
+        public IEnumerable<T> InorderTraversal()
+        {
+            if (_root == null)
+                throw new NullReferenceException();
 
-                //Если удаляем корень
-                if (tree == this)
-                {
-                    if (tree.right != null)
-                    {
-                        curTree = tree.right;
-                    }
-                    else curTree = tree.left;
+            return Inorder(_root);
+        }
 
-                    while (curTree.left != null)
-                    {
-                        curTree = curTree.left;
-                    }
-                    T temp = curTree.val;
-                    this.remove(temp);
-                    tree.val = temp;
+        /// <summary>
+        /// Invokes algorithm that returns enumerable for preorder traversal
+        /// </summary>
+        /// <returns>IEnumerable</returns>
+        public IEnumerable<T> PreorderTraversal()
+        {
+            if (_root == null)
+                throw new NullReferenceException();
 
-                    return true;
-                }
+            return Preorder(_root);
+        }
 
-                //Удаление листьев
-                if (tree.left == null && tree.right == null && tree.parent != null)
-                {
-                    if (tree == tree.parent.left)
-                        tree.parent.left = null;
-                    else
-                    {
-                        tree.parent.right = null;
-                    }
-                    return true;
-                }
+        /// <summary>
+        /// Invokes algorithm that returns enumerable for postorder traversal
+        /// </summary>
+        /// <returns>IEnumerable</returns>
+        public IEnumerable<T> PostorderTraversal()
+        {
+            if (_root == null)
+                throw new NullReferenceException();
 
-                //Удаление узла, имеющего левое поддерево, но не имеющее правого поддерева
-                if (tree.left != null && tree.right == null)
-                {
-                    //Меняем родителя
-                    tree.left.parent = tree.parent;
-                    if (tree == tree.parent.left)
-                    {
-                        tree.parent.left = tree.left;
-                    }
-                    else if (tree == tree.parent.right)
-                    {
-                        tree.parent.right = tree.left;
-                    }
-                    return true;
-                }
+            return Postorder(_root);
+        }
 
-                //Удаление узла, имеющего правое поддерево, но не имеющее левого поддерева
-                if (tree.left == null && tree.right != null)
-                {
-                    //Меняем родителя
-                    tree.right.parent = tree.parent;
-                    if (tree == tree.parent.left)
-                    {
-                        tree.parent.left = tree.right;
-                    }
-                    else if (tree == tree.parent.right)
-                    {
-                        tree.parent.right = tree.right;
-                    }
-                    return true;
-                }
+        /// <summary>
+        /// Recursive method that enumerable for inorder traversal
+        /// </summary>
+        /// <returns>IEnumerable</returns>
+        private IEnumerable<T> Inorder(Node<T> node)
+        {
+            if (node.left != null)
+                foreach (T currValue in Inorder(node.left))
+                    yield return currValue;
 
-                //Удаляем узел, имеющий поддеревья с обеих сторон
-                if (tree.right != null && tree.left != null)
-                {
-                    curTree = tree.right;
+            yield return node.value;
+            if (node.rigth != null)
+                foreach (T currValue in Inorder(node.rigth))
+                    yield return currValue;
+        }
 
-                    while (curTree.left != null)
-                    {
-                        curTree = curTree.left;
-                    }
+        /// <summary>
+        /// Recursive method that enumerable for preorder traversal
+        /// </summary>
+        /// <returns>IEnumerable</returns>
+        private IEnumerable<T> Preorder(Node<T> node)
+        {
+            yield return node.value;
+            if (node.left != null)
+                foreach (T currValue in Preorder(node.left))
+                    yield return currValue;
 
-                    //Если самый левый элемент является первым потомком
-                    if (curTree.parent == tree)
-                    {
-                        curTree.left = tree.left;
-                        tree.left.parent = curTree;
-                        curTree.parent = tree.parent;
-                        if (tree == tree.parent.left)
-                        {
-                            tree.parent.left = curTree;
-                        }
-                        else if (tree == tree.parent.right)
-                        {
-                            tree.parent.right = curTree;
-                        }
-                        return true;
-                    }
-                    //Если самый левый элемент НЕ является первым потомком
-                    else
-                    {
-                        if (curTree.right != null)
-                        {
-                            curTree.right.parent = curTree.parent;
-                        }
-                        curTree.parent.left = curTree.right;
-                        curTree.right = tree.right;
-                        curTree.left = tree.left;
-                        tree.left.parent = curTree;
-                        tree.right.parent = curTree;
-                        curTree.parent = tree.parent;
-                        if (tree == tree.parent.left)
-                        {
-                            tree.parent.left = curTree;
-                        }
-                        else if (tree == tree.parent.right)
-                        {
-                            tree.parent.right = curTree;
-                        }
+            if (node.rigth != null)
+                foreach (T currValue in Preorder(node.rigth))
+                    yield return currValue;
+        }
 
-                        return true;
-                    }
-                }
+        /// <summary>
+        /// Recursive method that enumerable for postorder traversal
+        /// </summary>
+        /// <returns>IEnumerable</returns>
+        private IEnumerable<T> Postorder(Node<T> node)
+        {
+            if (node.left != null)
+                foreach (T currValue in Postorder(node.left))
+                    yield return currValue;
+
+            if (node.rigth != null)
+                foreach (T currValue in Postorder(node.rigth))
+                    yield return currValue;
+
+            yield return node.value;
+        }
+
+        /// <summary>
+        /// Recursive method that checks if the element is in the tree
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="value"></param>
+        private bool Contains(Node<T> node, T value)
+        {
+            if (node == null)
                 return false;
-            }
 
-            private void _print(BinaryTree<T> node)
-            {
-                if (node == null) return;
-                _print(node.left);
-                listForPrint.Add(node.val);
-                Console.Write(node + " ");
-                if (node.right != null)
-                    _print(node.right);
-            }
-            public void print()
-            {
-                listForPrint.Clear();
-                _print(this);
-                Console.WriteLine();
-            }
+            int tempResult = _comparison(node.value, value);
+            if (tempResult == 0)
+                return true;
+            else if (tempResult > 0)
+                return Contains(node.left, value);
+            else
+                return Contains(node.rigth, value);
+        }
 
-            public override string ToString()
-            {
-                return val.ToString();
-            }
+        /// <summary>
+        /// Recursive method thad adds new element to the tree
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="value"></param>
+        private Node<T> Add(Node<T> node, T value)
+        {
+            if (node == null)
+                return new Node<T>(value);
+
+            if (_comparison(node.value, value) > 0)
+                node.left = Add(node.left, value);
+            else
+                node.rigth = Add(node.rigth, value);
+
+            return node;
         }
     }
 }

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NET.S._2019.Markin._13.Array
+namespace NET.S._2019.Markin._13.Arrays
 {
-    public class TransporyArray<T> : T<T>
+    public class SquareArray<T> : Arrays<T>
     {
-        public TransporyArray(int capasity) : base(capasity) { }
+        public SquareArray(int capasity) : base(capasity) { }
 
         public override void AddElement(int i, int j, T item)
         {
@@ -18,7 +18,6 @@ namespace NET.S._2019.Markin._13.Array
             }
 
             values[i, j] = item;
-            values[j, i] = item;
         }
     }
 }

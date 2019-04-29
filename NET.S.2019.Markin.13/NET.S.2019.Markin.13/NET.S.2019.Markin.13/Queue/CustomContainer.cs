@@ -34,7 +34,7 @@ namespace NET.S._2019.Markin._13
         {
             if (this.size == this.capacity)
             {
-                T[] newQueue = new T[2 * capacity];
+                T[] newQueue = new T[2 * capacity];    
                 Array.Copy(_array, 0, newQueue, 0, _array.Length);
                 _array = newQueue;
                 capacity *= 2;

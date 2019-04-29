@@ -41,15 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Array\ArrayExtension.cs" />
-    <Compile Include="Array\Arrays.cs" />
-    <Compile Include="Array\DiagonalArray.cs" />
-    <Compile Include="Array\EventArgsArray.cs" />
-    <Compile Include="Array\SquareArray.cs" />
-    <Compile Include="Array\TransporyArray.cs" />
+    <Compile Include="Arrays\ArrayExtension.cs" />
+    <Compile Include="Arrays\Arrays.cs" />
+    <Compile Include="Arrays\DiagonalArray.cs" />
+    <Compile Include="Arrays\EventArgsArray.cs" />
+    <Compile Include="Arrays\SquareArray.cs" />
+    <Compile Include="Arrays\TransporyArray.cs" />
     <Compile Include="Queue\CustomContainer.cs" />
     <Compile Include="Queue\CustomIterator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tree\BinaryTree.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
