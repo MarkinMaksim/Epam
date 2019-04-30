@@ -32,6 +32,11 @@ namespace NET.S._2019.Markin._13
 
         public void Enqueue(T newElement)
         {
+            if (newElement == null)
+            {
+                throw new ArgumentNullException(nameof(newElement) + "Can't be null");
+            }
+
             if (this.size == this.capacity)
             {
                 T[] newQueue = new T[2 * capacity];    
