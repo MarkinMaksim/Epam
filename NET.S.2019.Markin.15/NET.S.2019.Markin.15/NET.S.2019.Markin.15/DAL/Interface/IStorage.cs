@@ -14,6 +14,8 @@ namespace NET.S._2019.Markin._15.DAL.Interface
         void SaveAccs(string filename);
         void LoadAccs(string filename);
         Account GetByID(string id);
-        
+        List<Account> GetAccounts();
+
+
     }
 }

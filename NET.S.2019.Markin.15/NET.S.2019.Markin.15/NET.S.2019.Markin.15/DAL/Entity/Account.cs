@@ -13,6 +13,7 @@ namespace NET.S._2019.Markin._15.DAL.Entity
         protected string ownerLastname;
         protected double balance;
         protected int bonusPoints;
+        private static int currId = 1000000;
 
         /// <summary>
         /// 
@@ -33,8 +34,9 @@ namespace NET.S._2019.Markin._15.DAL.Entity
 
             ownerName = name;
             ownerLastname = lastName;
-            Random rnd = new Random();
-            accid = rnd.Next(1000000, 10000000).ToString();
+            //Random rnd = new Random();
+            //accid = rnd.Next(1000000, 10000000).ToString();
+            accid = currId++.ToString();
         }
 
         /// <summary>
@@ -159,6 +161,16 @@ namespace NET.S._2019.Markin._15.DAL.Entity
 
             balance -= amount;
             UpdateBonusPoints(amount);
+        }
+
+        /// <summary>
+        /// Converts currect instance to string
+        /// </summary>
+        /// <returns>string</returns>
+        public override string ToString()
+        {
+            return string.Format("______\nName: {0} {1}\nId: {2}\nBalance: {3}\nPoints: {4}\nType: " + GetType().Name,
+                ownerLastname, ownerName, accid, balance, bonusPoints);
         }
 
         protected abstract void UpdateBonusPoints(int amount);

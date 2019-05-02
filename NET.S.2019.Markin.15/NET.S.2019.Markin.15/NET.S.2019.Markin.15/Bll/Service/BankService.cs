@@ -1,23 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using NET.S._2019.Markin._15.DAL.Interface;
+using NET.S._2019.Markin._15.Bll.Interface;
 using System.Text;
+using NET.S._2019.Markin._15.Bll.Entity;
+using NET.S._2019.Markin._15.DAL.Entity;
 
 namespace NET.S._2019.Markin._15.Bll.Service
 {
-    public class BankService
+    public class BankService : IService
     {
-
         private IStorage storage;
-        /// <summary>
-        /// 
-        /// </summary>
-        public enum AccType
-        {
-            Basic,
-            Gold,
-            Platinum
-        }
 
         public BankService(IStorage storage)
         {
@@ -44,7 +37,7 @@ namespace NET.S._2019.Markin._15.Bll.Service
             storage.Add(acctype.ToString(), name, lastname);
         }
 
-        public static void CheckId(string id)
+        public void CheckId(string id)
         {
             if (id == null)
             {
@@ -61,6 +54,11 @@ namespace NET.S._2019.Markin._15.Bll.Service
         {
             CheckId(id);
             storage.Remove(id);
+        }
+
+        public List<Account> GetAccounts()
+        {
+            return storage.GetAccounts();
         }
 
         public void Deposit(string id, int amount)
@@ -84,5 +82,6 @@ namespace NET.S._2019.Markin._15.Bll.Service
         {
             storage.LoadAccs(filename);
         }
+
     }
 }

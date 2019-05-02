@@ -78,6 +78,18 @@ namespace NET.S._2019.Markin._15.DAL.Service
             }
         }
 
+        public List<Account> GetAccounts()
+        {
+            List<Account> result = new List<Account>();
+
+            foreach(Account acc in listaccs)
+            {
+                result.Add(acc);
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Found account in list by id
         /// </summary>
