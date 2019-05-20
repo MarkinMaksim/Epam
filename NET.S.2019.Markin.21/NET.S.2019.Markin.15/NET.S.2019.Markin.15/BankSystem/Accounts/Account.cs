@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NET.S._2019.Markin._15.DAL.Entity
+namespace NET.S._2019.Markin._08.BankSystem.Accounts
 {
     [Serializable]
     public abstract class Account
@@ -13,7 +13,6 @@ namespace NET.S._2019.Markin._15.DAL.Entity
         protected string ownerLastname;
         protected double balance;
         protected int bonusPoints;
-        private static int currId = 1000000;
 
         /// <summary>
         /// 
@@ -34,28 +33,8 @@ namespace NET.S._2019.Markin._15.DAL.Entity
 
             ownerName = name;
             ownerLastname = lastName;
-            //Random rnd = new Random();
-            //accid = rnd.Next(1000000, 10000000).ToString();
-            accid = currId++.ToString();
-        }
-
-        protected Account(string name, string lastName, string id)
-        {
-            if (name == null || lastName == null)
-            {
-                throw new ArgumentNullException("Parametrs can't be null");
-            }
-
-            if (name.Length <= 1 || lastName.Length <= 1)
-            {
-                throw new ArgumentNullException("Parametrs can't be empty or less then 1");
-            }
-
-            ownerName = name;
-            ownerLastname = lastName;
-            //Random rnd = new Random();
-            //accid = rnd.Next(1000000, 10000000).ToString();
-            accid = id;
+            Random rnd = new Random();
+            accid = rnd.Next(1000000, 10000000).ToString();
         }
 
         /// <summary>
@@ -180,16 +159,6 @@ namespace NET.S._2019.Markin._15.DAL.Entity
 
             balance -= amount;
             UpdateBonusPoints(amount);
-        }
-
-        /// <summary>
-        /// Converts currect instance to string
-        /// </summary>
-        /// <returns>string</returns>
-        public override string ToString()
-        {
-            return string.Format("______\nName: {0} {1}\nId: {2}\nBalance: {3}\nPoints: {4}\nType: " + GetType().Name,
-                ownerLastname, ownerName, accid, balance, bonusPoints);
         }
 
         protected abstract void UpdateBonusPoints(int amount);

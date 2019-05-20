@@ -2,33 +2,25 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NET.S._2019.Markin._15.DAL.Entity
+namespace NET.S._2019.Markin._08.BankSystem.Accounts
 {
-    /// <summary>
-    /// BaseAccount in bank system
-    /// </summary>
     [Serializable]
-    public class BaseAccount : Account
+    public class GoldAccount : Account
     {
         /// <summary>
-        /// Initialize  class BaseAccount
+        ///  Initialize  class GoldAccount
         /// </summary>
         /// <param name="name"></param>
         /// <param name="lastname"></param>
-        public BaseAccount(string name, string lastname) : base(name, lastname)
-        { }
-
-        public BaseAccount(string name, string lastname, string id) : base(name, lastname, id)
-        { }
+        public GoldAccount(string name, string lastname) : base(name, lastname) { }
 
         /// <summary>
         /// Update bonus points when deposit or withdraw method call
         /// </summary>
         /// <param name="amount">Money that we take or deposit</param>
-        // Transpher to service
         protected override void UpdateBonusPoints(int amount)
         {
-            bonusPoints += amount / 100;
+            bonusPoints += amount / 50;
         }
     }
 }

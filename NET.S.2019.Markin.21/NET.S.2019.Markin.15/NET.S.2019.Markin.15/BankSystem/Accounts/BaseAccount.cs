@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NET.S._2019.Markin._15.DAL.Entity
+namespace NET.S._2019.Markin._08.BankSystem.Accounts
 {
     /// <summary>
     /// BaseAccount in bank system
@@ -16,9 +16,6 @@ namespace NET.S._2019.Markin._15.DAL.Entity
         /// <param name="name"></param>
         /// <param name="lastname"></param>
         public BaseAccount(string name, string lastname) : base(name, lastname)
-        { }
-
-        public BaseAccount(string name, string lastname, string id) : base(name, lastname, id)
         { }
 
         /// <summary>
